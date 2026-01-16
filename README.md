@@ -17,6 +17,7 @@ Re-applied thermal interface material using Thermalright TFX, a high-viscosity p
 **Validation:**
 Successfully maintained stable temperatures at 78°C-79°C consistently over a long-term period, effectively eliminating the throttling issue.
 
+Note: This case study was originally shared and discussed within a local hardware community on Facebook to provide educational insights for other users.
 <details>
   <summary><b>Click to view benchmark screenshots</b></summary>
   
@@ -30,3 +31,4 @@ Successfully maintained stable temperatures at 78°C-79°C consistently over a l
   ![TFX Results load day 1](tfx_load_day_1.jpg)
   ![TFX Results load day 7](tfx_load_day_7.jpg)
 </details>
+
