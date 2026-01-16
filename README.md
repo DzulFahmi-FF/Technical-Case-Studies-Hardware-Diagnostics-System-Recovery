@@ -21,14 +21,20 @@ Note: This case study was originally shared and discussed within a local hardwar
 <details>
   <summary><b>Click to view benchmark screenshots</b></summary>
   
-  #### Kingpin KPx Results (Pump-Out Issue)
+  #### Phase 1: Kingpin KPx (Low Viscosity - Pump-Out Identified)
   ![Kingpin Results idle day 1](kingpin_idle_day_1.jpg)
+  *Image 1: Initial Idle temperatures with Kingpin KPx.*
   ![Kingpin Results load day 1](kingpin_load_day_1.jpg)
+  *Image 2: Day 1 Cinebench R15 Stress Test. Maximum temperature reached 79°C, showing excellent initial heat transfer.*
   ![Kingpin Results load day 7](kingpin_load_day_7.jpg)
+  *Image 3: Day 7 Cinebench R15 Stress Test. Maximum temperature spiked to 98°C, confirming performance degradation due to the "Pump-Out" effect.*
   
-  #### Thermalright TFX Results (Stable)
+  #### Phase 2: Thermalright TFX (High Viscosity - Stability Verified)
   ![TFX Results idle day 1](tfx_idle_day_1.jpg)
+  *Image 4: Idle temperatures with Thermalright TFX.*
   ![TFX Results load day 1](tfx_load_day_1.jpg)
+  *Image 5: Day 1 Cinebench R15 Stress Test. Maximum temperature reached 79°C, matching the initial performance of previous high-end pastes.*
   ![TFX Results load day 7](tfx_load_day_7.jpg)
+  *Image 6: Day 7 Cinebench R15 Stress Test. Maximum temperature remained stable at 78°C. This confirms that high-viscosity material successfully prevents pump-out on direct-die applications.*
 </details>
 
