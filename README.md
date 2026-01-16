@@ -16,3 +16,17 @@ Re-applied thermal interface material using Thermalright TFX, a high-viscosity p
 
 **Validation:**
 Successfully maintained stable temperatures at 78°C-79°C consistently over a long-term period, effectively eliminating the throttling issue.
+
+<details>
+  <summary><b>Click to view benchmark screenshots</b></summary>
+  
+  #### Kingpin KPx Results (Pump-Out Issue)
+  ![Kingpin Results idle day 1](kingpin_idle_day_1.jpg)
+  ![Kingpin Results load day 1](kingpin_load_day_1.jpg)
+  ![Kingpin Results load day 7](kingpin_load_day_7.jpg)
+  
+  #### Thermalright TFX Results (Stable)
+  ![TFX Results idle day 1](tfx_idle_day_1.jpg)
+  ![TFX Results load day 1](tfx_load_day_1.jpg)
+  ![TFX Results load day 7](tfx_load_day_7.jpg)
+</details>
