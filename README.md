@@ -41,41 +41,38 @@ Note: This case study was originally shared and discussed within a local hardwar
 
 ## Case Study 2: Diagnosing "5-Second Power Cutoff" & Peripheral Short-Circuit Recovery
 ### 1. Problem Identification
-#### Status: 
-System failed to POST (No Boot).
-#### Symptom: 
-Upon pressing the power button, the LED stayed solid for exactly 5 seconds, then the system abruptly shut down (Power Cutoff). No fan spin or screen activity.
-#### Expert Verdict: 
-A professional technician diagnosed this as a fatal Motherboard Short-Circuit or CPU Failure.
+* **Status:** System failed to POST (No Boot).
+* **Symptom:** Upon pressing the power button, the LED indicator remained solid for exactly 5 seconds, then the system abruptly shut down (Power Cutoff). No fan spin or display activity was observed.
+* **Expert Verdict:** A professional technician diagnosed this as a fatal **Motherboard Short-Circuit or CPU Failure**, suggesting the device was beyond repair.
 
-### 2. The 14-Day Persistence (Trial & Error Phase)
-I spent two weeks performing a deep-level investigation, refusing to accept the "dead motherboard" verdict. My troubleshooting steps included:
-#### Electrical Validation: 
-With a technical colleague, I verified that the main power flow from the AC adapter to the Power Management IC was normal, ruling out the power supply.
-#### Isolation Testing: 
-I stripped the laptop down, testing RAM and resetting the CMOS, but the "5-second shutdown" loop persisted.
-#### The Frustration: 
-The consistent timing of the shutdown (always 5 seconds) suggested a specific timeout or protection mechanism was being triggered.
+### 2. The 14-Day Persistence (Systematic Investigation Phase)
+I spent two weeks performing a deep-level investigation, refusing to accept the "dead motherboard" verdict. My methodology focused on a rigorous process of elimination:
+
+#### Electrical & Power Rail Validation
+* **Primary Input Test:** Verified the AC adapter output stability using a multimeter to ensure consistent power delivery.
+* **Logic Board Inspection:** With the help of a technical colleague, I analyzed the power flow from the DC-in jack to the **Power Management IC (PMIC)**. Observations confirmed that the main power rails were receiving and distributing the correct voltages, ruling out a simple charging port or adapter failure.
+
+#### Advanced Isolation Protocol (Minimal Boot Configuration)
+* **Component Stripping:** I stripped the motherboard down to its bare essentials (CPU, a single known-good RAM stick, and internal display) to isolate the core logic from external interference such as keyboard shorts or faulty IO ribbons.
+* **Capacitance Discharge:** Performed a deep "Hard Reset" by disconnecting all power sources (primary and CMOS batteries) and dissipating residual capacitance to ensure no "frozen" logic states were affecting the **Embedded Controller (EC)**.
+* **Result:** Despite these efforts, the "5-second power-on" loop persisted, pointing towards a deeper conflict within the high-speed data peripherals.
+
+#### The Analytical Lead
+* **Pattern Recognition:** The consistent timing of the shutdown—exactly 5 seconds every time—suggested that this wasn't a random hardware "death," but a specific **Over-Current Protection (OCP)** or timeout mechanism being triggered during the Power-On Self-Test (POST) handshake.
 
 ### 3. The "Eureka" Moment (The Discovery)
-After nearly giving up, I decided to remove the original SSD to secure my data. As a final experiment:
-#### The Action: 
-I inserted a spare SSD containing a Linux OS.
-#### The Result: 
-The system immediately powered on, passed the 5-second mark, and booted successfully into Linux.
-#### Verification: 
-Re-inserting the original SSD caused the "5-second power cutoff" to return immediately.
+After nearly giving up, I decided to remove the primary NVMe SSD to secure my personal data. As a final experiment:
+* **The Action:** I inserted a spare SSD containing a **Linux OS**.
+* **The Result:** The system immediately bypassed the 5-second mark and booted successfully into the Linux environment.
+* **Verification:** Re-inserting the original SSD consistently brought back the 5-second shutdown, confirming that the motherboard was healthy, but the storage peripheral was the "system killer."
 
 ### 4. Technical Root Cause Analysis (RCA)
-#### The Culprit: 
-The original SSD had developed a Short-to-Ground fault or internal controller failure.
-#### The Mechanism: 
-The faulty SSD was pulling down the 3.3V Power Rail. During the initial 5-second boot sequence, the Embedded Controller (EC) detected this voltage drop/irregularity.
-#### Protection Mode: 
-To prevent motherboard damage, the EC triggered an emergency "Over-Current Protection" (OCP) shutdown, cutting power instantly. This was mistakenly diagnosed by others as a mainboard failure.
+* **The Culprit:** The original SSD had developed a **Short-to-Ground** fault within its controller or capacitor bank.
+* **The Mechanism:** The faulty SSD was destabilizing the **3.3V Power Rail**. During the initial 5-second boot sequence, the Embedded Controller (EC) detected this voltage irregularity.
+* **Protection Mode:** To prevent permanent motherboard damage, the EC triggered an emergency **Over-Current Protection (OCP)** shutdown. This safety feature was what the technician misidentified as a general motherboard failure.
 
 ### 5. Professional Reflection
-This case demonstrated that a single shorted peripheral can mimic a dead motherboard. By persisting through a 14-day diagnostic process, I identified the true fault and saved the system from being scrapped.
+This case demonstrated that a single shorted peripheral can mimic a dead motherboard. By persisting through a 14-day diagnostic process and relying on systematic isolation rather than initial assumptions, I identified the true fault and saved a high-value system from being unnecessarily scrapped.
 
 <details>
 <summary><b>Click to view diagnostic videos and photos</b></summary>
