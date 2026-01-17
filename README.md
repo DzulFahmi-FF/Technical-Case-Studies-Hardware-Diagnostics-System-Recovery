@@ -64,7 +64,7 @@ I spent two weeks performing a deep-level investigation, refusing to accept the 
 After nearly giving up, I decided to remove the primary NVMe SSD to secure my personal data. As a final experiment:
 * **The Action:** I inserted a spare SSD containing a **Linux OS**.
 * **The Result:** The system immediately bypassed the 5-second mark and booted successfully into the Linux environment.
-* **Verification:** Re-inserting the original SSD consistently brought back the 5-second shutdown, confirming that the motherboard was healthy, but the storage peripheral was the "system killer."
+* **The Twist (Verification):** Upon re-inserting the original SSD, the system functioned perfectly and booted into the original Windows OS. The "5-second shutdown" loop was gone, confirming that the motherboard was not the issue, and the isolation testing had cleared the system's protection latch.
 
 ### 4. Technical Root Cause Analysis (RCA)
 * **The Culprit:** The original SSD had developed a **Short-to-Ground** fault within its controller or capacitor bank.
