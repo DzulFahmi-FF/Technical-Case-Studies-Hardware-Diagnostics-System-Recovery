@@ -240,20 +240,14 @@ Its purpose is to demonstrate **problem-solving approach and technical reasoning
 ### 2. The 14-Day Persistence (Systematic Investigation Phase)
 I spent two weeks performing a deep-level investigation, refusing to accept the "dead motherboard" verdict. My methodology focused on a rigorous process of elimination:
 
----
-
 #### Electrical & Power Rail Validation
 * **Primary Input Test:** Verified the AC adapter output stability using a multimeter to ensure consistent power delivery.
 * **Logic Board Inspection:** With the help of a technical colleague, I analyzed the power flow from the DC-in jack to the **Power Management IC (PMIC)**. Observations confirmed that the main power rails were receiving and distributing the correct voltages, ruling out a simple charging port or adapter failure.
-
----
 
 #### Advanced Isolation Protocol (Minimal Boot Configuration)
 * **Component Stripping:** I stripped the motherboard down to its bare essentials (CPU, a single known-good RAM stick, and internal display) to isolate the core logic from external interference such as keyboard shorts or faulty IO ribbons.
 * **Capacitance Discharge:** Performed a deep "Hard Reset" by disconnecting all power sources (primary and CMOS batteries) and dissipating residual capacitance to ensure no "frozen" logic states were affecting the **Embedded Controller (EC)**.
 * **Result:** Despite these efforts, the "5-second power-on" loop persisted, pointing towards a deeper conflict within the high-speed data peripherals.
-
----
 
 #### The Analytical Lead
 * **Pattern Recognition:** The consistent timing of the shutdown—exactly 5 seconds every time—suggested that this wasn't a random hardware "death," but a specific **Over-Current Protection (OCP)** or timeout mechanism being triggered during the Power-On Self-Test (POST) handshake.
