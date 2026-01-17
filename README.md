@@ -67,9 +67,10 @@ After nearly giving up, I decided to remove the primary NVMe SSD to secure my pe
 * **The Twist (Verification):** Upon re-inserting the original SSD, the system functioned perfectly and booted into the original Windows OS. The "5-second shutdown" loop was gone, confirming that the motherboard was not the issue, and the isolation testing had cleared the system's protection latch.
 
 ### 4. Technical Root Cause Analysis (RCA)
-* **The Culprit:** The original SSD had developed a **Short-to-Ground** fault within its controller or capacitor bank.
-* **The Mechanism:** The faulty SSD was destabilizing the **3.3V Power Rail**. During the initial 5-second boot sequence, the Embedded Controller (EC) detected this voltage irregularity.
-* **Protection Mode:** To prevent permanent motherboard damage, the EC triggered an emergency **Over-Current Protection (OCP)** shutdown. This safety feature was what the technician misidentified as a general motherboard failure.
+* **The Culprit:** A **Transient Logic Latch** or an **Electrical Handshake Conflict** between the original NVMe SSD and the motherboard's Power Management system.
+* **The Mechanism:** The system was likely stuck in a "Protection Loop." During the initial 5-second Power-On Self-Test (POST) window, the **Embedded Controller (EC)** detected a non-compliant power state or a communication timeout from the storage peripheral.
+* **Protection Mode Trigger:** To prevent potential hardware damage, the EC triggered an emergency **Over-Current Protection (OCP)** or **System Guard** shutdown. This state became "latched", meaning the system remembered the error and refused to boot even if the error was no longer present.
+* **The Resolution Logic:** Introducing a different peripheral (the Linux SSD) forced the **Power Management IC (PMIC)** to re-initialize the power-up sequence and perform a fresh hardware handshake. This successfully cleared the "Critical Error" flag in the EC, allowing the system to recognize the original SSD as a valid device again.
 
 ### 5. Professional Reflection
 This case demonstrated that a single shorted peripheral can mimic a dead motherboard. By persisting through a 14-day diagnostic process and relying on systematic isolation rather than initial assumptions, I identified the true fault and saved a high-value system from being unnecessarily scrapped.
