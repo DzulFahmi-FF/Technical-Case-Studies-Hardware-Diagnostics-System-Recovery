@@ -386,6 +386,12 @@ Recognizing that the Windows environment was no longer reliable, I implemented a
 
 ---
 
+### Additional Reflection
+
+This incident highlighted the importance of maintaining reliable system recovery mechanisms. At the time, system restore functionality was disabled, which limited available repair options. As a result, I now consistently maintain system backups across both Windows and Linux environments to reduce the risk of similar issues in the future.
+
+---
+
 ### Note on Documentation
 
 Due to the time-sensitive and continuous nature of this recovery process, visual documentation (screenshots or photos) was not captured.  
