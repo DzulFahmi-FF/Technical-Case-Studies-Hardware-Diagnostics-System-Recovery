@@ -250,7 +250,7 @@ Through **controlled component elimination**, **power rail validation**, and **p
 ---
 
 ### 2. The 14-Day Persistence (Systematic Investigation Phase)
-I spent two weeks performing a deep-level investigation, refusing to accept the "dead motherboard" verdict. My methodology focused on a rigorous process of elimination:
+I spent two weeks performing a deep-level investigation to better understand the system behavior. My methodology focused on a rigorous process of elimination:
 
 #### Electrical & Power Rail Validation
 * **Primary Input Test:** Verified the AC adapter output stability using a multimeter to ensure consistent power delivery.
