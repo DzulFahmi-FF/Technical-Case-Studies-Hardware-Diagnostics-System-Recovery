@@ -71,6 +71,7 @@ Conclusion:
 - Degradation speed was too fast to be caused by general hardware aging
 - Suggested a material behavior issue rather than poor application or product quality
 
+---
 
 #### Thermal Paste #2: Thermalright TFX
 - **Day 1:** ~79°C
