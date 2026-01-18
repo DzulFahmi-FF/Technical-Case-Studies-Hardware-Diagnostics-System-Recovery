@@ -230,7 +230,7 @@ Its purpose is to demonstrate **problem-solving approach and technical reasoning
 
 ## Case Study 2: Diagnosing "5-Second Power Cutoff" & Peripheral Short-Circuit Recovery
 
-### Case Study 2 – Summary
+### Summary
 
 This case study documents a **real-world investigation** into a laptop system that exhibited a consistent **“5-second power-on shutdown”** behavior, a condition commonly diagnosed as a **fatal motherboard or CPU failure**.
 
