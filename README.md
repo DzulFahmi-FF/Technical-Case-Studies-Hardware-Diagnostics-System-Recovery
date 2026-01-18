@@ -11,7 +11,7 @@ The purpose of this case study is to demonstrate **advanced troubleshooting, fai
 
 ---
 
-### System Context
+### 1. System Context
 - Device type: Laptop
 - Cooling type: Direct-die CPU cooling
 - Heatsink material: Copper (non–nickel plated)
@@ -19,7 +19,7 @@ The purpose of this case study is to demonstrate **advanced troubleshooting, fai
 
 ---
 
-### Test Methodology
+### 2. Test Methodology
 
 #### Stress Test
 - **Tool:** Cinebench R15  
@@ -37,7 +37,7 @@ This approach ensured **comparability across different testing periods**.
 
 ---
 
-### Problem Description
+### 3. Problem Description
 After repasting the CPU, thermal performance would initially improve.  
 However, after several days or weeks of normal usage and stress testing:
 
@@ -55,7 +55,7 @@ This indicated a **time-based failure mechanism**, not a one-time application er
 
 ---
 
-### Controlled Testing Results
+### 4. Controlled Testing Results
 
 #### Thermal Paste #1: Kingpin KPX
 - **Day 1:** ~78°C  
@@ -88,7 +88,7 @@ Conclusion:
 
 ---
 
-### Diagnostic Reasoning
+### 5. Diagnostic Reasoning
 
 Because:
 - Both thermal pastes are high-end products
@@ -102,7 +102,7 @@ I concluded that:
 
 ---
 
-### Failure Mechanism Identified: Pump-Out Effect
+### 6. Failure Mechanism Identified: Pump-Out Effect
 
 The primary failure mechanism for conventional thermal paste was identified as:
 
@@ -118,7 +118,7 @@ This explains why:
 
 ---
 
-### Escalation to Liquid Metal
+### 7. Escalation to Liquid Metal
 
 After understanding the limitations of conventional thermal paste, I escalated to **liquid metal** not for short-term temperature reduction, but to **eliminate pump-out behavior**.
 
@@ -129,7 +129,7 @@ Liquid metal characteristics:
 
 ---
 
-### Secondary Failure Mechanism Discovered
+### 8. Secondary Failure Mechanism Discovered
 
 Even with liquid metal, thermal degradation was observed again over time.
 
@@ -146,7 +146,7 @@ This reaction temporarily reduces thermal efficiency.
 
 ---
 
-### Critical Insight: Reaction Phase vs Failure
+### 9. Critical Insight: Reaction Phase vs Failure
 
 The key insight was that:
 - Initial degradation with liquid metal was **not a failure**
@@ -161,7 +161,7 @@ Then:
 
 ---
 
-### Material Compatibility Notes
+### 10. Material Compatibility Notes
 
 - **Nickel-plated heatsinks:**  
   Act as a diffusion barrier  
@@ -180,14 +180,14 @@ Then:
 
 ---
 
-### Final Outcome
+### 11. Final Outcome
 - Root cause identified at the material interaction level
 - Long-term thermal stability achieved after reaction phase completion
 - No recurring rapid degradation observed
 
 ---
 
-### Why This Case Matters
+### 12. Why This Case Matters
 This case demonstrates that:
 - Thermal issues are not always about peak temperature
 - Long-term behavior is more critical than initial results
@@ -196,7 +196,7 @@ This case demonstrates that:
 
 ---
 
-### Key Takeaways
+### 13. Key Takeaways
 - Consistent testing methodology is crucial for valid comparison
 - Understanding **why a solution degrades** is more valuable than finding a quick fix
 - Advanced troubleshooting requires thinking beyond components and into material behavior
