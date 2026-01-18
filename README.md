@@ -230,6 +230,18 @@ Its purpose is to demonstrate **problem-solving approach and technical reasoning
 
 ## Case Study 2: Diagnosing "5-Second Power Cutoff" & Peripheral Short-Circuit Recovery
 
+### Case Study 2 – Summary
+
+This case study documents a **real-world investigation** into a laptop system that exhibited a consistent **“5-second power-on shutdown”** behavior, a condition commonly diagnosed as a **fatal motherboard or CPU failure**.
+
+The issue was **not random power instability or permanent board damage**, but a **deterministic protection mechanism** triggered during the **early Power-On Self-Test (POST) phase**, causing the system to shut down at a **fixed time interval** with **no fan spin or display output**.
+
+The purpose of this case study is to demonstrate **deep-level diagnostic persistence**, **systematic isolation techniques**, and **firmware-aware reasoning** when dealing with **power protection loops** and **peripheral-induced logic lock states**.
+
+Through **controlled component elimination**, **power rail validation**, and **peripheral reinitialization**, this case reveals how a **single storage device** can **mimic catastrophic hardware failure**, and how understanding **Embedded Controller (EC) behavior** can lead to **full system recovery without component replacement**.
+
+---
+
 ### 1. Problem Identification
 * **Status:** System failed to POST (No Boot).
 * **Symptom:** Upon pressing the power button, the LED indicator remained solid for exactly 5 seconds, then the system abruptly shut down (Power Cutoff). No fan spin or display activity was observed.
