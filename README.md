@@ -1,7 +1,7 @@
  # Technical-Case-Studies-Hardware-Diagnostics-System-Recovery
 This repository documents my independent research and troubleshooting methodologies for complex computer system failures. My approach focuses on Root Cause Analysis (RCA) and systematic validation.
 
-## Case Study: Progressive Thermal Degradation on Direct-Die Laptop CPU
+## Case Study 1: Progressive Thermal Degradation on Direct-Die Laptop CPU
 
 ### Summary
 This case study documents a real-world investigation into **progressive thermal performance degradation** on a laptop with **direct-die CPU cooling**.  
