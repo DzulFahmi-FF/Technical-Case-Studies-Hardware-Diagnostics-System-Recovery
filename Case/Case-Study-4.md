@@ -26,3 +26,8 @@ Given that the ISP infrastructure currently lacks the stability required for sea
 * **The Importance of RCA**: In consumer environments, "No Internet" status is frequently a protocol-level conflict (IPv6) rather than a physical layer or hardware failure.
 * **Pragmatic Support**: Disabling modern features (IPv6) in favor of operational stability is a valid technical decision when upstream infrastructure is unreliable.
 * **Incident Documentation**: Maintaining logs of ISP-specific hardware behavior is crucial for accelerating future incident response and maintaining service quality.
+
+## Empirical Validation
+* **Cross-Service Consistency:** The identified behavior was observed across different service tiers, including **IndiHome (Consumer)** and **Indibiz (Business)**.
+* **Replicability:** Identical "No Internet" symptoms on separate subscriber lines (business and residential environments) were consistently resolved using the same protocol simplification (disabling IPv6).
+* **Conclusion:** This strongly indicates a systemic issue within the ISP’s IPv6 handling or routing infrastructure, affecting both retail and business-grade ONT deployments in the region.
